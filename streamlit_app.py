@@ -1,17 +1,71 @@
 # Import necessary libraries
 import streamlit as st
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-# Define the title of the web app
-st.title("Basic Streamlit App")
+# Sample data for demonstration
+data = {
+    'Category': ['A', 'B', 'C', 'D'],
+    'Values': [30, 45, 25, 50]
+}
+df = pd.DataFrame(data)
 
-# Add a slider to the web app
-user_input = st.slider("Select a value", 0, 100, 50)
+# Title of the web app
+st.title("Analysis Report with Streamlit")
 
-# Display the selected value
-st.write(f"You selected: {user_input}")
+# Section for Graphs
+st.header("Graphs")
 
-# Add a text input field
-user_text = st.text_input("Enter some text", "Hello, Streamlit!")
+# Line Chart
+st.subheader("Line Chart")
+plt.figure(figsize=(6, 4))
+sns.lineplot(data=df, x='Category', y='Values')
+st.pyplot()
 
-# Display the entered text
-st.write(f"You entered: {user_text}")
+# Bar Chart
+st.subheader("Bar Chart")
+plt.figure(figsize=(6, 4))
+sns.barplot(data=df, x='Category', y='Values')
+st.pyplot()
+
+# Pie Chart
+st.subheader("Pie Chart")
+plt.figure(figsize=(6, 4))
+plt.pie(df['Values'], labels=df['Category'], autopct='%1.1f%%', startangle=90)
+st.pyplot()
+
+# Area Chart
+st.subheader("Area Chart")
+plt.figure(figsize=(6, 4))
+sns.areaplot(data=df, x='Category', y='Values')
+st.pyplot()
+
+# Section for Analysis
+st.header("Analysis")
+
+# Add images for analysis
+st.image("path_to_image1.jpg", caption="Caption for Image 1", use_column_width=True)
+st.image("path_to_image2.jpg", caption="Caption for Image 2", use_column_width=True)
+
+# Future Prediction Section
+st.header("Future Prediction")
+
+# Input for future prediction
+future_prediction = st.text_input("Enter your prediction for the future:", "The values will increase.")
+
+# Display the prediction
+st.write(f"Future Prediction: {future_prediction}")
+
+# Links Section for Citations
+st.header("Links and Citations")
+
+# Input for links
+citation_links = st.text_area("Enter citations and links:", "Author et al., (Year). Title of the Paper. [Link to Paper]")
+
+# Display the links
+st.write("Citations and Links:")
+st.markdown(citation_links)
+
+# Note: Replace "path_to_image1.jpg" and "path_to_image2.jpg" with the actual file paths or URLs of your images.
