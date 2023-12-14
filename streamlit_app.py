@@ -2,8 +2,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Sample data for demonstration
 data = {
@@ -20,27 +18,19 @@ st.header("Graphs")
 
 # Line Chart
 st.subheader("Line Chart")
-plt.figure(figsize=(6, 4))
-sns.lineplot(data=df, x='Category', y='Values')
-st.pyplot()
+st.line_chart(df.set_index('Category'))
 
 # Bar Chart
 st.subheader("Bar Chart")
-plt.figure(figsize=(6, 4))
-sns.barplot(data=df, x='Category', y='Values')
-st.pyplot()
+st.bar_chart(df.set_index('Category'))
 
 # Pie Chart
 st.subheader("Pie Chart")
-plt.figure(figsize=(6, 4))
-plt.pie(df['Values'], labels=df['Category'], autopct='%1.1f%%', startangle=90)
-st.pyplot()
+st.pie_chart(df.set_index('Category')['Values'])
 
 # Area Chart
 st.subheader("Area Chart")
-plt.figure(figsize=(6, 4))
-sns.areaplot(data=df, x='Category', y='Values')
-st.pyplot()
+st.area_chart(df.set_index('Category'))
 
 # Section for Analysis
 st.header("Analysis")
