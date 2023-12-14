@@ -23,14 +23,6 @@ st.line_chart(df.set_index('Category'))
 st.subheader("Bar Chart")
 st.bar_chart(df.set_index('Category'))
 
-# Pie Chart (using streamlit's pie chart function)
-st.subheader("Pie Chart")
-st.pie_chart(df.set_index('Category')['Values'])
-
-# Area Chart
-st.subheader("Area Chart")
-st.area_chart(df.set_index('Category'))
-
 # Section for Analysis
 st.header("Analysis")
 
