@@ -1,6 +1,7 @@
 # Import necessary libraries
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Sample data for demonstration
 data = {
@@ -23,10 +24,9 @@ st.line_chart(df.set_index('Category'))
 st.subheader("Bar Chart")
 st.bar_chart(df.set_index('Category'))
 
-# Pie Chart (using matplotlib)
+# Pie Chart (using streamlit's pie chart function)
 st.subheader("Pie Chart")
-st.pyplot(plt.pie(df['Values'], labels=df['Category'], autopct='%1.1f%%', startangle=90))
-st.pyplot()
+st.pie_chart(df.set_index('Category')['Values'])
 
 # Area Chart
 st.subheader("Area Chart")
