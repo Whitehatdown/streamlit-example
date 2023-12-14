@@ -59,3 +59,21 @@ st.write("Citations and Links:")
 st.markdown(citation_links)
 
 # Note: Replace "path_to_image1.jpg" and "path_to_image2.jpg" with the actual file paths or URLs of your images.
+
+# Data for token distribution
+token_distribution_data = {
+    "Gnosis Vault, Founders & Project": 95.8,
+    "ICO Investors": 4.2
+}
+
+# Title of the web app
+st.title("Token Distribution Information")
+
+# Display token distribution information
+st.header("Token Distribution")
+
+# Create a DataFrame for better formatting
+token_distribution_df = pd.DataFrame(list(token_distribution_data.items()), columns=["Category", "Percentage"])
+
+# Display the token distribution table
+st.table(token_distribution_df)
