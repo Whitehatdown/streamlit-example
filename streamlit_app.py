@@ -1,3 +1,11 @@
+#Code by Team: CompetitionSmashers
+#Team Leader : Shrirang Savale
+#Team Member : Uday Joshi
+#Instiute : Indian Institute of Information Technology, Nagpur 
+
+#Note: We have used GPT-3 and other generative AI to simplify the creation process of this APP.
+#      This done to help us focus more on the analysis part of the project.
+
 # Import necessary libraries
 import streamlit as st
 import pandas as pd
@@ -188,6 +196,8 @@ how_it_works_info = {
     'GnosisDAO': 'GnosisDAO is the collective steward of the Gnosis ecosystem, formed in late 2020.'
 }
 
+
+
 # Create GnosisInfo instance
 gnosis_info = GnosisInfo(founder_info, how_it_works_info)
 
@@ -237,84 +247,6 @@ st.write("**Trading Platforms:** Listing on prominent exchanges like Binance, Hu
 st.image("GNO_All_graph_coinmarketcap.jpg", caption="All Time Data of GNO : From 2015 to Dec 2023", use_column_width=True)
 
 
-# Price Predictions Section
-st.header("Future Price Predictions")
-
-# Create an expander
-with st.expander("Methodology for Price Predictions"):
-    st.write("To formulate future predictions on GNO (Gnosis), a comprehensive methodology will be employed, combining insights from reputable analysis outlets and leveraging a proprietary model. The approach involves a multifaceted strategy to ensure a robust and well-informed forecast.")
-
-    # Market Research and Analysis Outlets
-    st.subheader("Market Research and Analysis Outlets:")
-    st.write("- **Historical Performance:** A thorough examination of GNO's historical performance will be conducted, considering factors such as past price trends, market cap variations, and trading volumes.")
-    st.write("- **Analysis Outlets:** Insights from renowned cryptocurrency analysis platforms, financial news sources, and market experts will be integrated. This includes references to publications from outlets like CoinDesk, CoinTelegraph, and financial analysts providing expert opinions.")
-
-    # Technical Analysis
-    st.subheader("Technical Analysis:")
-    st.write("- **Chart Patterns:** Utilizing technical analysis tools to identify significant chart patterns, trendlines, and key support/resistance levels. This includes employing popular indicators such as Moving Averages, Relative Strength Index (RSI), and Fibonacci retracements.")
-    st.write("- **Candlestick Analysis:** Analyzing candlestick patterns for potential trend reversal or continuation signals.")
-
-    # Fundamental Analysis
-    st.subheader("Fundamental Analysis:")
-    st.write("- **Token Metrics:** Evaluating fundamental aspects of GNO, including tokenomics such as maximum supply, circulation, and scarcity, to understand the underlying value proposition.")
-    st.write("- **Market Position:** Assessing GNO's standing in the broader cryptocurrency market, considering factors like market capitalization, rankings, and liquidity.")
-
-    # Sentiment Analysis
-    st.subheader("Sentiment Analysis:")
-    st.write("- **Social Media and News Monitoring:** Analyzing sentiment on social media platforms and major news outlets to gauge the market's perception and potential impact on GNO's price.")
-
-    # Machine Learning Model
-    st.subheader("Machine Learning Model:")
-    st.write("- **Proprietary Model:** Developing and integrating a proprietary machine learning model based on historical price data, incorporating features that capture relevant market dynamics. This model will aim to provide predictive insights into potential future price movements.")
-
-
-st.write("**2023 Prediction:** Predicted to reach a maximum of \$178.06, with an average around \$164.72 and a potential minimum of \$146.92.")
-
-st.write("**2025 Prediction:** Anticipated to achieve a maximum price of \$391.52, with an average of \$367.37, and a potential minimum of \$339.23.")
-
-st.write("**2030 Prediction:** Envisioned to sustain a maximum of \$1,124.57, an average of \$1,089.12, and a potential minimum of \$1,045.39.")
-
-st.write("**2040 Prediction:** Expected to reach a maximum of \$2,903.72, an average of \$2,765.26, and a potential minimum of \$2,568.25.")
-
-st.write("**2050 Prediction:** Speculated to achieve a maximum of \$5,228.67, an average of \$4,981.80, and a potential minimum of \$4,786.18.")
-
-
-# Given data
-years_given = np.array([2023, 2025, 2030, 2040, 2050])
-maximum_prices_given = np.array([178.06, 391.52, 1124.57, 2903.72, 5228.67])
-average_prices_given = np.array([164.72, 367.37, 1089.12, 2765.26, 4981.80])
-minimum_prices_given = np.array([146.92, 339.23, 1045.39, 2568.25, 4786.18])
-
-# Generating synthetic data for 50 years with added variation
-years_all = np.arange(2023, 2050)
-maximum_prices_all = np.interp(years_all, years_given, maximum_prices_given) + np.random.normal(scale=50, size=len(years_all))
-average_prices_all = np.interp(years_all, years_given, average_prices_given) + np.random.normal(scale=30, size=len(years_all))
-minimum_prices_all = np.interp(years_all, years_given, minimum_prices_given) + np.random.normal(scale=20, size=len(years_all))
-
-# Creating a dataframe
-data_all = pd.DataFrame({
-    'Year': years_all,
-    'Maximum Price': maximum_prices_all,
-    'Average Price': average_prices_all,
-    'Minimum Price': minimum_prices_all
-})
-
-# Melt the dataframe for Altair plotting
-melted_data_all = pd.melt(data_all, id_vars=['Year'], var_name='Price Type', value_name='Price')
-
-# Altair plot
-chart_all = alt.Chart(melted_data_all).mark_line().encode(
-    x='Year:O',
-    y='Price:Q',
-    color='Price Type:N'
-).properties(
-    title='GNO Price Predictions (2023-2050) as per FinanceShots',
-    width=800,
-    height=500
-)
-
-# Display the plot in Streamlit
-st.altair_chart(chart_all, use_container_width=True)
 
 
 # Factors Influencing Future Price Section
@@ -415,56 +347,232 @@ st.write("**Risk and Reward:** Lower-ranked cryptocurrencies can present both op
 # Conclusion Section
 st.header("Conclusion")
 
-st.write("Gnosis (GNO) emerges as a promising project with robust technical foundations and an active community.")
-st.write("The coin's limited supply, coupled with its integral role in the GnosisDAO, positions it well for sustained growth.")
-st.write("However, as with any investment, caution and thorough research are advised.")
-st.write("The outlined price predictions are based on technical analysis, and actual performance may vary depending on market dynamics and unforeseen events.")
-st.write("Investors should stay informed about the project's developments and market trends for prudent decision-making.")
+st.write("The conclusion below has been presented in three distinct segments, each focusing on different investment horizons: the next 6 months, 1 year, and 5 years. The rationale behind this structured approach is to offer investors a nuanced perspective, acknowledging that different timeframes may yield varied results.")
 
-st.header("Graphs")
+# Next 6 Months
+st.write("**Mid-term Investment**")
+st.write("The analysis suggests that GNO might face challenges in the short term. Market volatility, external influences, and specific short-term trends could impact its performance.")
 
-# Line Chart
-st.subheader("Line Chart")
-st.line_chart(df.set_index('Category'))
+# 5-Year Investment Horizon
+st.write("**Long-term Investment**")
+st.write("In contrast, the analysis for a 5-year investment horizon is expected to highlight potential strengths and advantages that make GNO a more attractive long-term investment. Considering the project's fundamentals, technological developments, and the broader evolution of the cryptocurrency market over an extended period.")
 
-# Bar Chart
-st.subheader("Bar Chart")
-st.bar_chart(df.set_index('Category'))
+# Display GNO prediction for the next 1 year with "SELL" in red
+st.write("### GNO prediction for the next 6 months : <span style='color:red'>SELL</span>", unsafe_allow_html=True)
 
-# Area Chart
-st.subheader("Area Chart")
-st.area_chart(df.set_index('Category'))
+st.image("Binance-prediction.png", caption="GNO's Market Price Forecast: From 2020 to 2030.      Source: Binance", use_column_width=True)
 
-# Section for Analysis
-st.header("Analysis")
+# Sample data
+data = {
+    'Period': ['RSI (14)', 'Stoch RSI (14)', 'Stochastic Fast (14)', 'Commodity Channel Index (20)',
+               'Average Directional Index (14)', 'Awesome Oscillator (5, 34)', 'Momentum (10)',
+               'MACD (12, 26)', 'Williams Percent Range (14)', 'Ultimate Oscillator (7, 14, 28)',
+               'VWMA (10)', 'Hull Moving Average (9)', 'Ichimoku Cloud B/L (9, 26, 52, 26)'],
+    'Value': [60.54, 81.87, 41.58, 66.67, 55.29, 37.43, 23.79, -0.25, -58.42, 49.52, 228.49, 242.53, 226.16],
+    'Action': ['NEUTRAL', 'SELL', 'NEUTRAL', 'NEUTRAL', 'SELL', 'NEUTRAL', 'NEUTRAL', 'NEUTRAL',
+               'NEUTRAL', 'NEUTRAL', 'SELL', 'SELL', 'NEUTRAL']
+}
 
-# Add images for analysis
-#st.image("path_to_image1.jpg", caption="Caption for Image 1", use_column_width=True)
+df = pd.DataFrame(data)
 
-# Future Prediction Section
-st.header("Future Prediction")
+# Define a styling function
+def color_negative_red(val):
+    color = 'red' if val == 'SELL' else 'blue'
+    return f'color: {color}'
 
-# Input for future prediction
-future_prediction = st.text_input("Enter your prediction for the future:", "The values will increase.")
+# Apply the styling function to the 'Action' column
+styled_df = df.style.applymap(color_negative_red, subset=['Action'])
 
-# Display the prediction
-st.write(f"Future Prediction: {future_prediction}")
+# Display the styled DataFrame
+st.dataframe(styled_df, height=500, width=1000)
 
-# Links Section for Citations
-st.header("Links and Citations")
+# Display GNO prediction for the next 1 year with "SELL" in red
+st.write("### GNO prediction for the next 1 year : <span style='color:red'>SELL</span>", unsafe_allow_html=True)
 
-# Input for links
-citation_links = st.text_area("Enter citations and links:", "Author et al., (Year). Title of the Paper. [Link to Paper]")
+st.image("Binance-prediction.png", caption="GNO's Market Price Forecast: From 2020 to 2030.      Source: Binance", use_column_width=True)
+
+# Sample data
+data = {
+    'Period': ['RSI (14)', 'Stoch RSI (14)', 'Stochastic Fast (14)', 'Commodity Channel Index (20)',
+               'Average Directional Index (14)', 'Awesome Oscillator (5, 34)', 'Momentum (10)',
+               'MACD (12, 26)', 'Williams Percent Range (14)', 'Ultimate Oscillator (7, 14, 28)',
+               'VWMA (10)', 'Hull Moving Average (9)', 'Ichimoku Cloud B/L (9, 26, 52, 26)'],
+    'Value': [60.54, 81.87, 41.58, 66.67, 55.29, 37.43, 23.79, -0.25, -58.42, 49.52, 228.49, 242.53, 226.16],
+    'Action': ['NEUTRAL', 'SELL', 'NEUTRAL', 'NEUTRAL', 'SELL', 'NEUTRAL', 'NEUTRAL', 'NEUTRAL',
+               'NEUTRAL', 'NEUTRAL', 'SELL', 'SELL', 'NEUTRAL']
+}
+
+df = pd.DataFrame(data)
+
+# Define a styling function
+def color_negative_red(val):
+    color = 'red' if val == 'SELL' else 'blue'
+    return f'color: {color}'
+
+# Apply the styling function to the 'Action' column
+styled_df = df.style.applymap(color_negative_red, subset=['Action'])
+
+# Display the styled DataFrame
+st.dataframe(styled_df, height=500, width=1000)
+
+st.write("### GNO prediction for the next 5 year : <span style='color:green'>BUY</span>", unsafe_allow_html=True)
+
+def display_gno_uses_info():
+    with st.expander("Uses of GNO (Gnosis)"):
+        st.markdown("Gnosis (GNO) is a decentralized platform built on the Ethereum blockchain that facilitates the creation and management of prediction markets. Prediction markets are platforms where users can bet on the outcome of future events, utilizing the collective wisdom of the crowd to generate insights. Here are some key uses of GNO within its ecosystem:")
+
+        # Prediction Markets
+        st.subheader("Prediction Markets:")
+        st.markdown("GNO enables the creation of prediction markets, allowing users to speculate on the outcome of events such as elections, sports events, or financial markets. This serves as a decentralized and crowd-sourced forecasting tool.")
+
+        # Decentralized Governance
+        st.subheader("Decentralized Governance:")
+        st.markdown("GNO holders play a crucial role in the governance of the Gnosis platform. They can participate in decision-making processes, propose changes, and vote on important protocol upgrades. This decentralized governance model ensures community involvement in the project's evolution.")
+
+        # Crowdsourced Information
+        st.subheader("Crowdsourced Information:")
+        st.markdown("Prediction markets on Gnosis leverage the wisdom of the crowd to aggregate information and make predictions. This can provide valuable insights into the probability of various future outcomes, making it a powerful tool for information gathering.")
+
+        # Risk Management
+        st.subheader("Risk Management:")
+        st.markdown("Businesses and individuals can use GNO's prediction markets for risk management purposes. By tapping into the collective intelligence of participants, users can assess and hedge against potential risks in various domains.")
+
+    with st.expander("Ecosystem Strength Using Ethereum as a Base"):
+        st.markdown("Gnosis benefits significantly from being built on the Ethereum blockchain. Ethereum, as a well-established and widely adopted blockchain, provides the following strengths to GNO's ecosystem:")
+
+        # Security and Reliability
+        st.subheader("Security and Reliability:")
+        st.markdown("Ethereum is known for its robust security features and reliability. GNO inherits these qualities, providing a secure environment for users to engage in prediction markets and governance activities.")
+
+        # Interoperability
+        st.subheader("Interoperability:")
+        st.markdown("Being on Ethereum enhances GNO's interoperability with other Ethereum-based projects. This connectivity allows for seamless integration with various decentralized finance (DeFi) applications and other blockchain ecosystems.")
+
+        # Developer Ecosystem
+        st.subheader("Developer Ecosystem:")
+        st.markdown("Ethereum boasts a thriving developer community. GNO benefits from this ecosystem by having access to a pool of talented developers, fostering continuous innovation and improvements.")
+
+        # Liquidity and Accessibility
+        st.subheader("Liquidity and Accessibility:")
+        st.markdown("Ethereum's widespread adoption contributes to GNO's liquidity and accessibility. Traders and users can easily access GNO tokens on various decentralized exchanges and liquidity pools within the Ethereum ecosystem.")
+
+    with st.expander("High Confidence in Crypto Market"):
+        st.markdown("Confidence in the cryptocurrency market has reached unprecedented levels in recent years. Several factors contribute to this positive sentiment:")
+
+        # Institutional Adoption
+        st.subheader("Institutional Adoption:")
+        st.markdown("Increasing participation from institutional investors and major financial institutions has added credibility to the crypto market, signaling a growing acceptance of digital assets.")
+
+        # Maturation of Infrastructure
+        st.subheader("Maturation of Infrastructure:")
+        st.markdown("The crypto market has witnessed significant improvements in infrastructure, including regulatory frameworks, security measures, and user interfaces. These developments contribute to a more mature and user-friendly ecosystem.")
+
+        # Mainstream Recognition
+        st.subheader("Mainstream Recognition:")
+        st.markdown("Cryptocurrencies and blockchain technology have gained recognition from mainstream media, governments, and businesses. This broader acceptance has fueled positive sentiment and increased confidence among investors.")
+
+        # Innovation and Development
+        st.subheader("Innovation and Development:")
+        st.markdown("Ongoing innovation in the blockchain space, including the rise of decentralized finance (DeFi) and non-fungible tokens (NFTs), has demonstrated the transformative potential of blockchain technology. This continuous development fosters confidence in the long-term viability of the crypto market.")
+
+
+
+st.write(" Gnosis (GNO) emerges as a compelling investment opportunity within the crypto landscape, supported by a robust combination of technical and fundamental analyses. With its foundation on the Ethereum blockchain, GNO harnesses the security, interoperability, and developer ecosystem strengths of one of the most widely adopted blockchains. The versatile applications of GNO, ranging from prediction markets to decentralized governance, underscore its significance in the evolving crypto ecosystem. The platform's commitment to innovation, as evidenced by components like the CoW Protocol, Safe, Gnosis Chain, and GnosisDAO, positions it as a dynamic force in the blockchain space.")
+st.write("**Some more reasons are listed below:**")
+display_gno_uses_info()
+
+
+
+st.write("Coupled with the heightened confidence in the broader crypto market, marked by institutional adoption and maturation of infrastructure, GNO appears poised for sustained growth. So we rate GNO as a <span style='color:green'>**BUY**</span> for the next 3-5 year term.", unsafe_allow_html=True)
+
+st.write("**Note: Even though we have stated that GNO is a <span style='color:green'>BUY</span> for next 5 years, it's not the best investment opportunity out there. Investing only into GNO will result in opportunity loss. Hence, this token should only be used to diversify your portfolio on a limited scale**", unsafe_allow_html=True)
+
 
 # Display the links
 st.write("Citations and Links:")
-st.markdown(citation_links)
+
+
+# Price Predictions Section
+st.header("Future Price Predictions upto 2050")
+
+# Create an expander
+with st.expander("Methodology for Price Predictions"):
+    st.write("To formulate future predictions on GNO (Gnosis), a comprehensive methodology will be employed, combining insights from reputable analysis outlets and leveraging a proprietary model. The approach involves a multifaceted strategy to ensure a robust and well-informed forecast.")
+
+    # Market Research and Analysis Outlets
+    st.subheader("Market Research and Analysis Outlets:")
+    st.write("- **Historical Performance:** A thorough examination of GNO's historical performance will be conducted, considering factors such as past price trends, market cap variations, and trading volumes.")
+    st.write("- **Analysis Outlets:** Insights from renowned cryptocurrency analysis platforms, financial news sources, and market experts will be integrated. This includes references to publications from outlets like CoinDesk, CoinTelegraph, and financial analysts providing expert opinions.")
+
+    # Technical Analysis
+    st.subheader("Technical Analysis:")
+    st.write("- **Chart Patterns:** Utilizing technical analysis tools to identify significant chart patterns, trendlines, and key support/resistance levels. This includes employing popular indicators such as Moving Averages, Relative Strength Index (RSI), and Fibonacci retracements.")
+    st.write("- **Candlestick Analysis:** Analyzing candlestick patterns for potential trend reversal or continuation signals.")
+
+    # Fundamental Analysis
+    st.subheader("Fundamental Analysis:")
+    st.write("- **Token Metrics:** Evaluating fundamental aspects of GNO, including tokenomics such as maximum supply, circulation, and scarcity, to understand the underlying value proposition.")
+    st.write("- **Market Position:** Assessing GNO's standing in the broader cryptocurrency market, considering factors like market capitalization, rankings, and liquidity.")
+
+    # Sentiment Analysis
+    st.subheader("Sentiment Analysis:")
+    st.write("- **Social Media and News Monitoring:** Analyzing sentiment on social media platforms and major news outlets to gauge the market's perception and potential impact on GNO's price.")
+
+    # Machine Learning Model
+    st.subheader("Machine Learning Model:")
+    st.write("- **Proprietary Model:** Developing and integrating a proprietary machine learning model based on historical price data, incorporating features that capture relevant market dynamics. This model will aim to provide predictive insights into potential future price movements.")
+
+
+st.write("**2023 Prediction:** Predicted to reach a maximum of \$178.06, with an average around \$164.72 and a potential minimum of \$146.92.")
+
+st.write("**2025 Prediction:** Anticipated to achieve a maximum price of \$391.52, with an average of \$367.37, and a potential minimum of \$339.23.")
+
+st.write("**2030 Prediction:** Envisioned to sustain a maximum of \$1,124.57, an average of \$1,089.12, and a potential minimum of \$1,045.39.")
+
+st.write("**2040 Prediction:** Expected to reach a maximum of \$2,903.72, an average of \$2,765.26, and a potential minimum of \$2,568.25.")
+
+st.write("**2050 Prediction:** Speculated to achieve a maximum of \$5,228.67, an average of \$4,981.80, and a potential minimum of \$4,786.18.")
+
+
+# Given data
+years_given = np.array([2023, 2025, 2030, 2040, 2050])
+maximum_prices_given = np.array([178.06, 391.52, 1124.57, 2903.72, 5228.67])
+average_prices_given = np.array([164.72, 367.37, 1089.12, 2765.26, 4981.80])
+minimum_prices_given = np.array([146.92, 339.23, 1045.39, 2568.25, 4786.18])
+
+# Generating synthetic data for 50 years with added variation
+years_all = np.arange(2023, 2050)
+maximum_prices_all = np.interp(years_all, years_given, maximum_prices_given) + np.random.normal(scale=50, size=len(years_all))
+average_prices_all = np.interp(years_all, years_given, average_prices_given) + np.random.normal(scale=30, size=len(years_all))
+minimum_prices_all = np.interp(years_all, years_given, minimum_prices_given) + np.random.normal(scale=20, size=len(years_all))
+
+# Creating a dataframe
+data_all = pd.DataFrame({
+    'Year': years_all,
+    'Maximum Price': maximum_prices_all,
+    'Average Price': average_prices_all,
+    'Minimum Price': minimum_prices_all
+})
+
+# Melt the dataframe for Altair plotting
+melted_data_all = pd.melt(data_all, id_vars=['Year'], var_name='Price Type', value_name='Price')
+
+# Altair plot
+chart_all = alt.Chart(melted_data_all).mark_line().encode(
+    x='Year:O',
+    y='Price:Q',
+    color='Price Type:N'
+).properties(
+    title='GNO Price Predictions (2023-2050) as per FinanceShots',
+    width=800,
+    height=500
+)
+
+# Display the plot in Streamlit
+st.altair_chart(chart_all, use_container_width=True)
+
 
 # Note: Replace "path_to_image1.jpg" and "path_to_image2.jpg" with the actual file paths or URLs of your images.
 
 
-# URL to be embedded
-iframe_url = "https://www.example.com"
-
-# Use st.markdown with HTML to embed the iframe
-st.markdown(f'<iframe src="{iframe_url}" width="800" height="600"></iframe>', unsafe_allow_html=True)
+#
