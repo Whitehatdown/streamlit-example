@@ -142,6 +142,9 @@ def comparison_section():
     st.write(f"**Weaknesses (GNO):** {weaknesses}")
 
 
+
+
+
 df = pd.DataFrame(data)
 # Title of the web app
 st.title("Analysis Report on GNOSIS")
@@ -218,6 +221,11 @@ st.image("GNO_All_graph_coinmarketcap.jpg", caption="All Time Data of GNO : From
 
 comparison_section()
 
+st.subheader("**Rise of Altcoins:** ")
+st.write("The cryptocurrency market has witnessed a surge in altcoins, with several new projects emerging in recent years. This trend is expected to continue, with more altcoins entering the market. This influx will help GNO's market share to grow, as it is one of the most promising altcoins in the market.")
+
+st.image("coinvariance.png", caption="", use_column_width=100, output_format="auto")
+
 st.subheader("**Historical Performance:**")
 st.write("GNO has demonstrated substantial growth since its launch, providing favorable returns in 2022.")
 st.write("Gnosis (GNO) has undergone notable market cap fluctuations from January 2017 to November 2023, reflecting a dynamic journey in the cryptocurrency landscape. The market cap, a key indicator of a cryptocurrency's valuation, witnessed significant highs and lows during this period.")
@@ -238,14 +246,14 @@ st.subheader("**Market Position:**")
 st.write("As of the latest data, GNO holds a significant position with a market cap of $580.76 million USD, ranked 96th.")
 st.image("Marketcapdata all2.png", caption="...", use_column_width=True)
 st.image("Marketcapdata all.png", caption="Market Position Data of GNO - Dec 2023", use_column_width=True)
+st.write("As of the latest data, Gnosis (GNO) commands a formidable market cap of $580.76 million USD. This robust market capitalization underscores GNO's substantial market presence and investor confidence. The 96th ranking reflects Gnosis's sustained relevance and adoption within the dynamic cryptocurrency landscape.")
 
-
-st.write("**Token Metrics:** With a maximum supply of 3,000,000, GNO has maintained its scarcity, influencing its value.")
-st.image("GNO_All_graph_coinmarketcap.jpg", caption="All Time Data of GNO : From 2015 to Dec 2023", use_column_width=True)
+st.subheader("**Token Metrics:** ")
+st.write("Gnosis (GNO) distinguishes itself through a capped maximum supply of 3,000,000 tokens, instilling scarcity reminiscent of traditional commodities. This deliberate token scarcity serves as a key economic driver, fostering confidence among adopters and investors.")
+st.image("Market Cap data.png", caption="All Time Data of GNO : From 2015 to Dec 2023", use_column_width=100)
+st.write("The limited supply model not only aligns with sound economic principles but also positions GNO as a store of value. This unique feature attracts a dedicated user base, reinforcing network security and establishing Gnosis as a standout player in the cryptocurrency space. The commitment to controlled token issuance contributes to GNO's perceived strength and long-term value proposition.")
 
 st.write("**Trading Platforms:** Listing on prominent exchanges like Binance, Huobi, Kraken, and others enhances liquidity and accessibility.")
-st.image("GNO_All_graph_coinmarketcap.jpg", caption="All Time Data of GNO : From 2015 to Dec 2023", use_column_width=True)
-
 
 
 
@@ -253,18 +261,18 @@ st.image("GNO_All_graph_coinmarketcap.jpg", caption="All Time Data of GNO : From
 st.subheader("Factors Influencing GNO's Future Price")
 
 
-st.write("**Ecosystem Development**:Continued development and adoption of Gnosis' products, including Gnosis Safe, Cow Protocol, and others.")
+st.write("**Ecosystem Development**: Continued development and adoption of Gnosis' products, including Gnosis Safe, Cow Protocol, and others.")
 
 
-st.write("**Market Trends**:The overall trends in the cryptocurrency market, especially the demand for decentralized applications and services.")
+st.write("**Market Trends**: The overall trends in the cryptocurrency market, especially the demand for decentralized applications and services.")
 
 st.write("**Community Support**: Gnosis' strong community and governance structure contribute to the platform's credibility and growth potential.")
 
-st.write("**Partnerships and Collaborations**:Future collaborations and partnerships may positively impact GNO's value, especially if integrated with leading blockchain networks.")
+st.write("**Partnerships and Collaborations**: Future collaborations and partnerships may positively impact GNO's value, especially if integrated with leading blockchain networks.")
 
-st.write("**Scalability and Interoperability**:Gnosis' scalability and interoperability features are critical for long-term success.")
+st.write("**Scalability and Interoperability**: Gnosis' scalability and interoperability features are critical for long-term success.")
 
-
+st.write("<span style='color:green'>**Positive Outlook:**</span> The ongoing positive developments in Gnosis' ecosystem, coupled with strong community support, bode well for the token's long-term prospects." , unsafe_allow_html=True)
 
 def show():
 
@@ -316,20 +324,21 @@ def display_analysis_methodology():
 
 
 st.subheader("Technical Analysis of Past Week:")
+st.write("Cryptocurrency markets are highly dynamic and influenced by a myriad of factors, both intrinsic and extrinsic. Conducting a comprehensive technical analysis is crucial for making informed investment decisions. This methodology outlines a detailed approach, combining various tools and techniques to analyze crypto tokens.")
+st.image("Technical_Parameters.png", caption="All Time Data of GNO : From 2015 to Dec 2023", use_column_width=True)
+
 if __name__ == "__main__":
     show()
-st.write("Cryptocurrency markets are highly dynamic and influenced by a myriad of factors, both intrinsic and extrinsic. Conducting a comprehensive technical analysis is crucial for making informed investment decisions. This methodology outlines a detailed approach, combining various tools and techniques to analyze crypto tokens.")
-# Displaying information using st.write()
+
 
 st.write("**Ranking:** Being ranked 96th in market cap suggests that GNO is not among the top-tier cryptocurrencies, which might impact its visibility and attractiveness to investors.")
 
 st.write("**Market Capitalization:** A market cap of $580.76 million USD indicates a relatively mid-sized cryptocurrency. This might mean that GNO has a moderate level of adoption and market interest.")
-
+st.image("CoinRelation.png", caption="All Time Data of GNO : From 2015 to Dec 2023", use_column_width=True)
 # Consumer Confidence
 st.write("### Consumer Confidence:")
 
 st.image("greed-1.png", caption="All Time Data of GNO's Market Capitalization : From 2015 to Dec 2023", use_column_width=True)
-
 
 st.write("**Volatility:** Cryptocurrencies, especially those with lower market caps, tend to experience higher volatility. This can affect consumer confidence, as rapid price movements may be perceived as risky.")
 
