@@ -4,7 +4,7 @@
 #Instiute : Indian Institute of Information Technology, Nagpur 
 
 #Note: We have used GPT-3 and other generative AI to simplify the creation process of this APP.
-#      This done to help us focus more on the analysis part of the project.
+#      This is done to help us focus more on the analysis part of the project.
 
 # Import necessary libraries
 import streamlit as st
@@ -219,6 +219,7 @@ st.image(image_path, caption="", use_column_width=100, output_format="auto")
 
 st.image("GNO_All_graph_coinmarketcap.jpg", caption="All Time Data of GNO : From 2015 to Dec 2023", use_column_width=True)
 
+
 comparison_section()
 
 st.subheader("**Rise of Altcoins:** ")
@@ -327,6 +328,7 @@ st.subheader("Technical Analysis of Past Week:")
 st.write("Cryptocurrency markets are highly dynamic and influenced by a myriad of factors, both intrinsic and extrinsic. Conducting a comprehensive technical analysis is crucial for making informed investment decisions. This methodology outlines a detailed approach, combining various tools and techniques to analyze crypto tokens.")
 st.image("Technical_Parameters.png", caption="All Time Data of GNO : From 2015 to Dec 2023", use_column_width=True)
 
+
 if __name__ == "__main__":
     show()
 
@@ -334,6 +336,7 @@ if __name__ == "__main__":
 st.write("**Ranking:** Being ranked 96th in market cap suggests that GNO is not among the top-tier cryptocurrencies, which might impact its visibility and attractiveness to investors.")
 
 st.write("**Market Capitalization:** A market cap of $580.76 million USD indicates a relatively mid-sized cryptocurrency. This might mean that GNO has a moderate level of adoption and market interest.")
+st.image("Allcoindata1.png", caption="All Time Data of GNO : From 2015 to Dec 2023", use_column_width=True)
 st.image("CoinRelation.png", caption="All Time Data of GNO : From 2015 to Dec 2023", use_column_width=True)
 # Consumer Confidence
 st.write("### Consumer Confidence:")
@@ -369,6 +372,9 @@ st.write("In contrast, the analysis for a 5-year investment horizon is expected 
 # Display GNO prediction for the next 1 year with "SELL" in red
 st.write("### GNO prediction for the next 6 months : <span style='color:red'>SELL</span>", unsafe_allow_html=True)
 
+st.write("Analyzing the technical indicators for GNO over the next 6 months suggests a cautious approach for potential investors. Several key indicators, such as Stoch RSI, Average Directional Index, VWMA, and Hull Moving Average, signal a bearish sentiment or a neutral stance. The Stoch RSI, with a 'SELL' action, indicates that the market is overbought and may experience a downturn.")
+
+
 st.image("Binance-prediction.png", caption="GNO's Market Price Forecast: From 2020 to 2030.      Source: Binance", use_column_width=True)
 
 # Sample data
@@ -395,11 +401,17 @@ styled_df = df.style.applymap(color_negative_red, subset=['Action'])
 # Display the styled DataFrame
 st.dataframe(styled_df, height=500, width=1000)
 
+st.write("The Average Directional Index and Hull Moving Average, both signaling 'SELL,' further underscore potential downward trends. While some indicators remain neutral, the overall technical analysis suggests a period of uncertainty and a less favorable market for GNO in the short term. Investors should consider this information and conduct thorough research before making investment decisions.")
+
+
 # Display GNO prediction for the next 1 year with "SELL" in red
 st.write("### GNO prediction for the next 1 year : <span style='color:red'>SELL</span>", unsafe_allow_html=True)
 
-st.image("Binance-prediction.png", caption="GNO's Market Price Forecast: From 2020 to 2030.      Source: Binance", use_column_width=True)
+st.write("""Examining the technical indicators for GNO over the next year urges a cautious stance among potential investors. Noteworthy indicators like Stoch RSI, Average Directional Index, VWMA, and Hull Moving Average consistently convey a bearish or neutral sentiment. The "SELL" action in Stoch RSI hints at an overbought market, potentially leading to a downturn.""")
 
+st.image("GNO_MovingAvg.png", caption="GNO's Market Price Forecast: From 2020 to 2030.      Source: Binance", use_column_width=True)
+
+st.write("""Both the Average Directional Index and Hull Moving Average signaling "SELL" emphasize potential downward trends. Despite some neutral signals, the overall technical analysis points towards a period of uncertainty and a less favorable market outlook for GNO in the mid-term. Investors are advised to carefully weigh this information and conduct thorough research before committing to investment decisions.""")
 # Sample data
 data = {
     'Period': ['RSI (14)', 'Stoch RSI (14)', 'Stochastic Fast (14)', 'Commodity Channel Index (20)',
